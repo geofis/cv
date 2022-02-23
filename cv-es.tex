@@ -1,0 +1,1124 @@
+%% Template for a CV
+%% Author: Rob J Hyndman
+
+\documentclass[10pt,a4paper,]{article}
+\usepackage[scaled=0.86]{DejaVuSansMono}
+\usepackage[sfdefault,lf,t]{carlito}
+
+% Change color to blue
+\usepackage{color,xcolor}
+\definecolor{headcolor}{HTML}{990000}
+
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true,hidelinks]{hyperref}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{geometry}
+\geometry{left=1.75cm,right=1.75cm,top=2.2cm,bottom=2cm}
+
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\date{febrero 2022}
+
+\DeclareUnicodeCharacter{0301}{\'{e}}
+
+\usepackage{paralist,ragged2e,datetime}
+\usepackage[hyphens]{url}
+\usepackage{fancyhdr,enumitem,pifont}
+\usepackage[compact,small,sf,bf]{titlesec}
+
+\RaggedRight
+\sloppy
+
+% Header and footer
+\pagestyle{fancy}
+\makeatletter
+\lhead{\sf\textcolor[gray]{0.4}{Curriculum Vitae: \@name}}
+\rhead{\sf\textcolor[gray]{0.4}{\thepage}}
+\cfoot{}
+\def\headrule{{\color[gray]{0.4}\hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
+\makeatother
+
+% Header box
+\usepackage{tabularx}
+
+\makeatletter
+\def\name#1{\def\@name{#1}}
+\def\info#1{\def\@info{#1}}
+\makeatother
+\newcommand{\shadebox}[3][.9]{\fcolorbox[gray]{0}{#1}{\parbox{#2}{#3}}}
+
+\usepackage{calc}
+\newlength{\headerboxwidth}
+\setlength{\headerboxwidth}{\textwidth}
+%\addtolength{\headerboxwidth}{0.2cm}
+\makeatletter
+\def\maketitle{
+\thispagestyle{plain}
+\vspace*{-1.4cm}
+\shadebox[0.9]{\headerboxwidth}{\sf\color{headcolor}\hfil
+\hbox to 0.98\textwidth{\begin{tabular}{l}
+\\[-0.3cm]
+\LARGE\textbf{\@name}
+\\[0.1cm]\large Professor \& Researcher\\[0.6cm]
+\normalsize\textbf{Curriculum Vitae}\\
+\normalsize febrero 2022
+\end{tabular}
+\hfill\hbox{\fontsize{9}{12}\sf
+\begin{tabular}{@{}rl@{}}
+\@info
+\end{tabular}}}\hfil
+}
+\vspace*{0.2cm}}
+\makeatother
+
+% Section headings
+\titlelabel{}
+\titlespacing{\section}{0pt}{1.5ex}{0.5ex}
+\titleformat*{\section}{\color{headcolor}\large\sf\bfseries}
+\titleformat*{\subsection}{\color{headcolor}\sf\bfseries}
+\titlespacing{\subsection}{0pt}{1ex}{0.5ex}
+
+% Miscellaneous dimensions
+\setlength{\parskip}{0ex}
+\setlength{\parindent}{0em}
+\setlength{\headheight}{15pt}
+\setlength{\tabcolsep}{0.15cm}
+\clubpenalty = 10000
+\widowpenalty = 10000
+\setlist{itemsep=1pt}
+\setdescription{labelwidth=1.2cm,leftmargin=1.5cm,labelindent=1.5cm,font=\rm}
+
+% Make nicer bullets
+\renewcommand{\labelitemi}{\ding{228}}
+
+\usepackage{booktabs,fontawesome5}
+%\usepackage[t1,scale=0.86]{sourcecodepro}
+
+\name{José Ramón Martínez Batlle}
+\def\imagetop#1{\vtop{\null\hbox{#1}}}
+\info{%
+\raisebox{-0.05cm}{\imagetop{\faIcon{map-marker-alt}}} &  \imagetop{\begin{tabular}{@{}l@{}}School
+of Geography, Autonomous University of Santo Domingo\end{tabular}}\\ %
+\faIcon{home} & \href{http://geografiafisica.org}{geografiafisica.org}\\% %
+\faIcon{phone-alt} & +1809 535 8273 ext 4281\\%
+\faIcon{envelope} & \href{mailto:joseramon@geografiafisica.org}{\nolinkurl{joseramon@geografiafisica.org}}\\%
+\faIcon{twitter} & \href{https://twitter.com/geografiard}{@geografiard}\\%
+\faIcon{github} & \href{https://github.com/geofis}{geofis}\\%
+%
+%
+%
+}
+
+
+%\usepackage{inconsolata}
+
+
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+
+% Pandoc CSL macros
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\hfill #1~}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \cslhangindent - \csllabelwidth}{#1}\vspace{0.8ex}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+\def\endfirstpage{\newpage}
+
+\begin{document}
+\maketitle
+
+
+\hypertarget{biography}{%
+\section{Biography}\label{biography}}
+
+Profesor e investigador, de formación base ingeniero y geógrafo con
+estudios de especialización en geografía.
+
+Imparto las asignaturas geomorfología, biogeografía y geografía física
+general, entre otras, en la Universidad Autónoma de Santo Domingo
+(UASD). También he impartido docencia en universidades nacionales e
+internacionales sobre conservación de la naturaleza y gestión de riesgos
+de desastres.
+
+Investigo en áreas tales como geomorfología, biogeografía, conservación
+y gestión de recursos naturales, gestión de riesgos de desastres y
+cambios ambientales. He dirigido proyectos de investigación financiados
+por subvenciones, pero la mayor parte de mi investigación reciente es
+autofinanciada. Mi motivación principal es responder preguntas de
+investigación, producir y publicar de conocimiento nuevo, y desarrollar
+ciencia accesible a mis estudiantes. He publicado artículos científicos,
+participado en congresos de ciencia, colaborado en la redacción de
+libros y capítulos de libros, y asesorado estudiantes de licenciatura y
+de posgrado en estas disciplinas.
+
+Para mi labor docente e investigadora, me apoyo en tecnología de
+información geográfica, como son teledetección óptica y radar, SIG,
+fotogrametría, posicionamiento GNSS y plataformas de computación en la
+nube. Empleo técnicas de estadística espacial, machine learning y deep
+learning. La mayor parte de mis flujos de trabajo se apoyan en scripts
+analíticos de R y Python. De preferencia, uso software libre y/o de
+código abierto bajo entorno Linux. Más recientemente, estoy
+desarrollando paquetes propios de software y creando hardware DIY.
+
+\hypertarget{employments}{%
+\section{Employments}\label{employments}}
+
+\begin{longtable}{@{\extracolsep{\fill}}ll}
+2004 - Present & \parbox[t]{0.85\textwidth}{%
+\textbf{Profesor / Investigador}\hfill{\footnotesize Universidad Autónoma de Santo Domingo}\newline
+  Santo Domingo\par%
+  \empty%
+\vspace{\parsep}}\\
+2008 - 2013 & \parbox[t]{0.85\textwidth}{%
+\textbf{Project Manager for International Cooperation}\hfill{\footnotesize Agencia Española de Cooperación Internacional para el Desarrollo}\newline
+  Santo Domingo\par%
+  \empty%
+\vspace{\parsep}}\\
+2006 - 2008 & \parbox[t]{0.85\textwidth}{%
+\textbf{Natural Resources Management Technician}\hfill{\footnotesize Fondo Mixto Hispano-Panameño de Cooperación Técnica}\newline
+  Panamá\par%
+  \empty%
+\vspace{\parsep}}\\
+2005 - 2006 & \parbox[t]{0.85\textwidth}{%
+\textbf{Department manager}\hfill{\footnotesize Oficina Nacional de Planificación. Secretariado Técnico de la Presidencia (STP)}\newline
+  Santo Domingo\par%
+  \empty%
+\vspace{\parsep}}\\
+1996 - 1999 & \parbox[t]{0.85\textwidth}{%
+\textbf{Department manager and Project Leader}\hfill{\footnotesize Dirección Nacional de Parques}\newline
+  Santo Domingo\par%
+  \empty%
+\vspace{\parsep}}\\
+\end{longtable}
+
+\hypertarget{education}{%
+\section{Education}\label{education}}
+
+\begin{longtable}{@{\extracolsep{\fill}}ll}
+1999 - 2012 & \parbox[t]{0.85\textwidth}{%
+\textbf{Ph.D in Physical Geography}\hfill{\footnotesize Universidad de Sevilla}\newline
+  Sevilla\par%
+  \empty%
+\vspace{\parsep}}\\
+2001 - 2003 & \parbox[t]{0.85\textwidth}{%
+\textbf{Degree in Geography}\hfill{\footnotesize Universidad de Sevilla}\newline
+  Sevilla\par%
+  \empty%
+\vspace{\parsep}}\\
+1997 - 1999 & \parbox[t]{0.85\textwidth}{%
+\textbf{Master in Nature Conservation and Management}\hfill{\footnotesize Universidad Internacional de Andalucía}\newline
+  Huelva\par%
+  \empty%
+\vspace{\parsep}}\\
+1990 - 1994 & \parbox[t]{0.85\textwidth}{%
+\textbf{Electrical Engineer}\hfill{\footnotesize Instituto Tecnológico de Santo Domingo}\newline
+  Santo Domingo\par%
+  \empty%
+\vspace{\parsep}}\\
+\end{longtable}
+
+\hypertarget{works}{%
+\section{Works}\label{works}}
+
+\hypertarget{bibliography}{}
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108106153}{}%
+\CSLLeftMargin{1. }
+\CSLRightInline{Martínez-Batlle, J. R. (2021). Cartografía
+geomorfológica de detalle de un río tropical usando fotografías aéreas
+de resolución centimétrica y deep learning. In \emph{XX Jornada de
+Investigación Científica. Universidad Autónoma de Santo Domingo
+(UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108106177}{}%
+\CSLLeftMargin{2. }
+\CSLRightInline{Martínez-Batlle, J. R. (2021). Deforestación y fuego en
+República Dominicana durante el siglo XXI. In \emph{XX Jornada de
+Investigación Científica. Universidad Autónoma de Santo Domingo
+(UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108106129}{}%
+\CSLLeftMargin{3. }
+\CSLRightInline{Martínez-Batlle, J. R. (2021). Deformación superficial
+en la ciudad de Santo Domingo usando small baseline subset (SBAS). In
+\emph{XX Jornada de Investigación Científica. Universidad Autónoma de
+Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108106194}{}%
+\CSLLeftMargin{4. }
+\CSLRightInline{Martínez-Batlle, J. R. (2021). Revisitando RTK para
+todos. Sistema base-rover GNSS-RTK multibanda y multiconstelación de
+bajo costo. In \emph{XX Jornada de Investigación Científica. Universidad
+Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-https:ux2fux2fdoi.orgux2f10.5281ux2fzenodo.5694017}{}%
+\CSLLeftMargin{5. }
+\CSLRightInline{Martínez-Batlle, J. R. (2021).
+\emph{geofis/forest-loss-fire-reproducible: First release}. Zenodo.
+\url{https://doi.org/10.5281/ZENODO.5694017}}
+
+\leavevmode\hypertarget{ref-https:ux2fux2fdoi.orgux2f10.5281ux2fzenodo.5682104}{}%
+\CSLLeftMargin{6. }
+\CSLRightInline{Martínez-Batlle, J. R. (2021). \emph{Dataset for: Forest
+loss and fire in the Dominican Republic during the 21st Century}.
+Zenodo. \url{https://doi.org/10.5281/ZENODO.5682104}}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108096224}{}%
+\CSLLeftMargin{7. }
+\CSLRightInline{Martínez-Batlle, J. R. (2021). Fuego y deforestación.
+Vistazo nacional, acercamiento a Valle Nuevo. In \emph{Grupo de
+discusión e intercambio científico {``Plagiodontia.''} Museo Nacional de
+Historia Natural {``Prof.~Eugenio de Jesús Marcano''}}.}
+
+\leavevmode\hypertarget{ref-Batlle_2021}{}%
+\CSLLeftMargin{8. }
+\CSLRightInline{Martínez-Batlle, J. R. (2021). \emph{Forest loss and
+fire in the Dominican Republic during the 21st Century}.
+\url{https://doi.org/10.1101/2021.06.15.448604}}
+
+\leavevmode\hypertarget{ref-Mart_nez_Batlle_2021}{}%
+\CSLLeftMargin{9. }
+\CSLRightInline{Martínez-Batlle, J. R., \& van-der-Hoek, Y. (2021).
+Plant community associations with morpho-topographic, geological and
+land use attributes in a semi-deciduous tropical forest of the Dominican
+Republic. \emph{Neotropical Biodiversity}, \emph{7}(1), 465--475.
+\url{https://doi.org/10.1080/23766808.2021.1987769}}
+
+\leavevmode\hypertarget{ref-Martinez_Batlle_2020}{}%
+\CSLLeftMargin{10. }
+\CSLRightInline{Martínez-Batlle, J. R., \& van-der-Hoek, Y. (2020).
+\emph{Plant community associations with environmental variables in a
+semi-deciduous tropical forest of the Dominican Republic}.
+\url{https://doi.org/10.1101/2020.08.04.235390}}
+
+\leavevmode\hypertarget{ref-C_mara_Artigas_2020}{}%
+\CSLLeftMargin{11. }
+\CSLRightInline{Cámara-Artigas, R., Díaz-del-Olmo, F., \&
+Martínez-Batlle, J. R. (2020). TBRs, a methodology for the multi-scalar
+cartographic analysis of the distribution of plant formations.
+\emph{Boletín de La Asociación de Geógrafos Españoles}, \emph{85}.
+\url{https://doi.org/10.21138/bage.2915}}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108106017}{}%
+\CSLLeftMargin{12. }
+\CSLRightInline{Martínez-Batlle, J. R. (2019). Estimación de la
+granulometría de carga gruesa superficial mediante fotografías de alta
+resolución tomadas por UAV. In \emph{XVIII Jornada de Investigación
+Científica. Universidad Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108105769}{}%
+\CSLLeftMargin{13. }
+\CSLRightInline{Martínez-Batlle, J. R. (2019). Geomorfología de detalle
+de un tramo de 1 kilómetro del río Mana, proximidades de Villa
+Altagracia, República Dominicana. In \emph{XVIII Jornada de
+Investigación Científica. Universidad Autónoma de Santo Domingo
+(UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108106039}{}%
+\CSLLeftMargin{14. }
+\CSLRightInline{Martínez-Batlle, J. R. (2019). Historia de un rechazo:
+ordenación de comunidades plantas de Ocoa, revisitada. In \emph{XVIII
+Jornada de Investigación Científica. Universidad Autónoma de Santo
+Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108106059}{}%
+\CSLLeftMargin{15. }
+\CSLRightInline{Martínez-Batlle, J. R. (2019). RTK para todos. Unidad
+GNSS de bajo costo basado en Raspberry Pi: primeros resultados y
+potenciales aplicaciones. In \emph{XVIII Jornada de Investigación
+Científica. Universidad Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_76604230}{}%
+\CSLLeftMargin{16. }
+\CSLRightInline{Martínez-Batlle, J. R. (2019). Drainage Rearrangement as
+a Driver of Geomorphological Evolution During the Upper Pleistocene in a
+Small Tropical Basin. \emph{Journal of Geography and Geology}.
+\url{https://doi.org/10.31223/OSF.IO/PFZVQ}}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108096060}{}%
+\CSLLeftMargin{17. }
+\CSLRightInline{Martínez-Batlle, J. R. (2019). Reorganización del
+drenaje durante el Pleistoceno Superior en la cuenca del río Ocoa. In
+\emph{2do. Congreso Internacional de Geología Aplicada de República
+Dominicana. Sociedad Dominicana de Geología}.}
+
+\leavevmode\hypertarget{ref-Mart_nez_Batlle_2018}{}%
+\CSLLeftMargin{18. }
+\CSLRightInline{Martínez-Batlle, J. R., \& van-der-Hoek, Y. (2018).
+Clusters of high abundance of plants detected from local indicators of
+spatial association (LISA) in a semi-deciduous tropical forest.
+\emph{PLOS ONE}, \emph{13}(12), e0208780.
+\url{https://doi.org/10.1371/journal.pone.0208780}}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108008287}{}%
+\CSLLeftMargin{19. }
+\CSLRightInline{Martínez-Batlle, J. R. (2018). Reorganización del
+drenaje durante el Pleistoceno Superior en la cuenca del río Ocoa. In
+\emph{XVII Jornada de Investigación Científica. Universidad Autónoma de
+Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_76604201}{}%
+\CSLLeftMargin{20. }
+\CSLRightInline{Martínez-Batlle, J. R. (2018). Digital photogrammetry of
+historical aerial photographs using open-source software. In
+\emph{EarthArXiv}. \url{https://doi.org/10.31223/osf.io/bna95}}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108164639}{}%
+\CSLLeftMargin{21. }
+\CSLRightInline{Martínez-Batlle, J. R. (2018). Análisis con escasos
+recursos y técnicas libres: diversidad y asociación de comunidades de
+plantas con variables ambientales. In \emph{XIV Congreso Internacional
+de Investigación Científica. Ministerio de Educación Superior, Ciencia y
+Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108164664}{}%
+\CSLLeftMargin{22. }
+\CSLRightInline{Martínez-Batlle, J. R., \& van-der-Hoek, Y. (2018).
+Asociación de comunidades de plantas con variables ambientales en un
+bosque semideciduo tropical de República Dominicana. In \emph{XIV
+Congreso Internacional de Investigación Científica. Ministerio de
+Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108164842}{}%
+\CSLLeftMargin{23. }
+\CSLRightInline{Martínez-Batlle, J. R., Navarro-Morales, S. Q.,
+Lubertazzi, D., Sánchez-Rosario, A., Sosa-Hernández, D. A.,
+Manzueta-Acevedo, P. K., Martínez-Uribe, J. I., \& García-Disla, S. O.
+(2018). Diversidad de hormigas en el Jardín Botánico Nacional y el
+Parque Mirador del Norte. In \emph{XIV Congreso Internacional de
+Investigación Científica. Ministerio de Educación Superior, Ciencia y
+Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108164731}{}%
+\CSLLeftMargin{24. }
+\CSLRightInline{Martínez-Batlle, J. R. (2018). Software de código
+abierto y gratuito para fotogrametría digital y SIG en la producción de
+cartografía geomorfológica, utilizando como fuentes fotografías áereas
+tradicionales adquiridas con cámara fotogramétrica. Aplicación a la
+cuenca del río Ocoa. In \emph{XIV Congreso Internacional de
+Investigación Científica. Ministerio de Educación Superior, Ciencia y
+Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-rodriguez2018analisis}{}%
+\CSLLeftMargin{25. }
+\CSLRightInline{Rodríguez, E. B., Martínez-Batlle, J. R.,
+Cámara-Artigas, R., \& Silva-Pérez, R. (2018). Análisis estadístico
+espacial de las pérdidas en la ocupación de las formaciones adehesadas
+en Sierra Morena (1956-2007). \emph{Bosque Mediterráneo y Humedales:
+Paisaje, Evolución y Conservación: Aportaciones Desde La Biogeografía},
+711--721.}
+
+\leavevmode\hypertarget{ref-del2018manglares}{}%
+\CSLLeftMargin{26. }
+\CSLRightInline{Díaz-del-Olmo, F., Cámara-Artigas, R., Martínez-Batlle,
+J. R., \& Morón-Monge, M. del C. (2018). Manglares de Chiriquí (costa
+del Pacífico, Panamá): Diagnóstico biogeomorfológico aplicado a la
+conservación de costas tropicales. \emph{América Latina En Las últimas
+décadas: Procesos y Retos}, 81--100.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108105108}{}%
+\CSLLeftMargin{27. }
+\CSLRightInline{Martínez-Batlle, J. R., \& van-der-Hoek, Y. (2017).
+Asociaciones de especies con variables ambientales en un bosque
+semideciduo tropical de República Dominicana. In \emph{XVI Jornada de
+Investigación Científica. Universidad Autónoma de Santo Domingo
+(UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108105172}{}%
+\CSLLeftMargin{28. }
+\CSLRightInline{Martínez-Batlle, J. R., \& van-der-Hoek, Y. (2017).
+Clusters de alta abundancia de plantas detectados mediante indicadores
+locales de asociación espacial (LISA) en un bosque semideciduo tropical.
+In \emph{XVI Jornada de Investigación Científica. Universidad Autónoma
+de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108520061}{}%
+\CSLLeftMargin{29. }
+\CSLRightInline{Martínez-Batlle, J. R. (2017). \emph{Introducción a la
+fotogrametría aplicada a imágenes tomadas desde sistemas de aeronaves
+pilotadas a distancia (RPAS) o drones}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108008472}{}%
+\CSLLeftMargin{30. }
+\CSLRightInline{Martínez-Batlle, J. R., \& van-der-Hoek, Y. (2017).
+Detección de hotspots de biodiversidad dentro de transectos mediante
+autocorrelación espacial, y su relación con el hábito de plantas
+arborescentes. In \emph{XIII Congreso Internacional de Investigación
+Científica. Ministerio de Educación Superior, Ciencia y Tecnología
+(MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108008490}{}%
+\CSLLeftMargin{31. }
+\CSLRightInline{Martínez-Batlle, J. R. (2017). Algoritmo desarrollado en
+R para generar imágenes de satélite libres de nubes. In \emph{XIII
+Congreso Internacional de Investigación Científica. Ministerio de
+Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108008425}{}%
+\CSLLeftMargin{32. }
+\CSLRightInline{Martínez-Batlle, J. R. (2017). Diseño de muestreo con
+caracterización semiautomática de variables del territorio mediante R y
+QGIS. Aplicación en áreas urbanas. In \emph{XIII Congreso Internacional
+de Investigación Científica. Ministerio de Educación Superior, Ciencia y
+Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108010451}{}%
+\CSLLeftMargin{33. }
+\CSLRightInline{Martínez-Batlle, J. R. (2017). Análisis de diversidad de
+plantas leñosas y arborescentes de la cuenca media del río Ocoa. In
+\emph{IX Congreso de la Biodiversidad Caribeña. Universidad Autónoma de
+Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108010431}{}%
+\CSLLeftMargin{34. }
+\CSLRightInline{Heredia, Y., \& Martínez-Batlle, J. R. (2017).
+Biodiversidad y caracterización florística en etapas serales de la
+vegetación del parque nacional Mirador Norte. In \emph{IX Congreso de la
+Biodiversidad Caribeña. Universidad Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108104972}{}%
+\CSLLeftMargin{35. }
+\CSLRightInline{Martínez-Batlle, J. R. (2016). Estimación del porcentaje
+de cobertura arbórea de la cuenca del río Ocoa mediante clasificación de
+imágenes Landsat y Pléiades. In \emph{XV Jornada de Investigación
+Científica. Universidad Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108095974}{}%
+\CSLLeftMargin{36. }
+\CSLRightInline{Martínez-Batlle, J. R. (2016). Valle Nuevo es \ldots{}
+cambios. In \emph{Panel {``Valle Nuevo es agua.''} Academia de Ciencias
+de la República Dominicana}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108041435}{}%
+\CSLLeftMargin{37. }
+\CSLRightInline{Martínez-Batlle, J. R., Rojas-Valerio, W., \&
+De-Aza-Concepción, M. (2016). Clasificación de microcuencas de orden 2 a
+partir de sus parámetros morfométricos. Relación con factores
+litológicos. In \emph{XII Congreso Internacional de Investigación
+Científica. Ministerio de Educación Superior, Ciencia y Tecnología
+(MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108041097}{}%
+\CSLLeftMargin{38. }
+\CSLRightInline{Martínez-Batlle, J. R., \& Laurencio-Girón, G. (2016).
+Desprendimiento El Canal, cuenca del río Ocoa: análisis del cambio en un
+movimiento de ladera mediante fotogrametría digital y geoestadística. In
+\emph{XII Congreso Internacional de Investigación Científica. Ministerio
+de Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108041325}{}%
+\CSLLeftMargin{39. }
+\CSLRightInline{Martínez-Batlle, J. R. (2016). Determinación
+semiautomática de la superficie quemada mediante teledetección de imagen
+Landsat OLI/TIRS: el incendio de Valle Nuevo de mayo de 2015. In
+\emph{XII Congreso Internacional de Investigación Científica. Ministerio
+de Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108041498}{}%
+\CSLLeftMargin{40. }
+\CSLRightInline{Martínez-Batlle, J. R. (2016). Diversidad y patrones
+espaciales de vegetación arborescente en bosque semideciduo: análisis
+con estadística univariada y geoestadística. In \emph{XII Congreso
+Internacional de Investigación Científica. Ministerio de Educación
+Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108010543}{}%
+\CSLLeftMargin{41. }
+\CSLRightInline{Martínez-Batlle, J. R., \& Laurencio-Girón, G. (2016).
+Estimación del porcentaje de cobertura arbórea de la cuenca del río Ocoa
+mediante clasificación de imágenes Landsat y Pléiades. In \emph{XII
+Congreso Internacional de Investigación Científica. Ministerio de
+Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108010605}{}%
+\CSLLeftMargin{42. }
+\CSLRightInline{Martínez-Batlle, J. R. (2016). Terraza del Pleistoceno
+Superior del tramo medio de la cuenca del río Ocoa: resultados
+preliminares de dataciones por radiocarbono utilizando AMS. In \emph{XII
+Congreso Internacional de Investigación Científica. Ministerio de
+Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_76609746}{}%
+\CSLLeftMargin{43. }
+\CSLRightInline{Martínez-Batlle, J. R., Santos-Grullón, I.,
+Laurencio-Girón, G., Cámara-Artigas, R., Valerio-Rojas, W.,
+De-Aza-Concepción, M., \& Medina-Castillo, E. (2016). Diversidad alpha y
+factores físicos de bosques tropicales con contraste estacional, cuenca
+del río Ocoa. \emph{Anuario de Investigaciones Científicas. Universidad
+Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108041630}{}%
+\CSLLeftMargin{44. }
+\CSLRightInline{Martínez-Batlle, J. R. (2015). Biodiversidad,
+geoestadística y factores litogeomorfológicos. Una aplicación a
+muestreos de flora en República Dominicana. In \emph{XIV Jornadas de
+Investigación Científica. Universidad Autónoma de Santo Domingo
+(UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108095931}{}%
+\CSLLeftMargin{45. }
+\CSLRightInline{Martínez-Batlle, J. R. (2015). Bosques en régimen
+tropical y con contraste estacional de la cuenca del río Ocoa.
+Diversidad alpha y factores explicativos. In \emph{Grupo de discusión e
+intercambio científico {``Plagiodontia.''} Museo Nacional de Historia
+Natural . Eugenio de Jesús Marcano''}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108046725}{}%
+\CSLLeftMargin{46. }
+\CSLRightInline{Barrios-Rodríguez, M., \& Martínez-Batlle, J. R. (2015).
+Análisis de componentes principales de deslizamientos superficiales en
+laderas de la cuenca del río Ocoa, República Dominicana. In \emph{XI
+Congreso Internacional de Investigación Científica. Ministerio de
+Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108047433}{}%
+\CSLLeftMargin{47. }
+\CSLRightInline{Martínez-Batlle, J. R., Rojas-Valerio, W., \&
+Medina-Castillo, E. (2015). Análisis de los componentes principales de
+depósitos aluviales de la cuenca del río Ocoa, República Dominicana. In
+\emph{XI Congreso Internacional de Investigación Científica. Ministerio
+de Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108047709}{}%
+\CSLLeftMargin{48. }
+\CSLRightInline{Martínez-Batlle, J. R., Rojas-Valerio, W., \&
+Medina-Castillo, E. (2015). Avances en el conocimiento de la dinámica
+aluvial del río Ocoa a partir de análisis estadístico de la tipología y
+morfometría de 10,000 gravas y bloques. In \emph{XI Congreso
+Internacional de Investigación Científica. Ministerio de Educación
+Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108052894}{}%
+\CSLLeftMargin{49. }
+\CSLRightInline{Martínez-Batlle, J. R., Santos-Grullón, I.,
+Laurencio-Girón, G., Cámara-Artigas, R., De-Aza-Concepción, M.,
+Rojas-Valerio, W., \& Medina-Castillo, E. (2015). Bosques en régimen
+tropical y con contraste estacional de la cuenca del río Ocoa (I).
+Diversidad alpha de plantas leñosas, palmas y Cactaceae y factores
+explicativos, a partir del análisis de 24 muestreos de campo. In
+\emph{XI Congreso Internacional de Investigación Científica. Ministerio
+de Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108052927}{}%
+\CSLLeftMargin{50. }
+\CSLRightInline{Martínez-Batlle, J. R. (2015). El Catálogo de plantas
+con semillas de las Indias Occidentales (Acevedo- Rodríguez y Strong,
+2012) {``pasado por R.''} In \emph{XI Congreso Internacional de
+Investigación Científica. Ministerio de Educación Superior, Ciencia y
+Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108049160}{}%
+\CSLLeftMargin{51. }
+\CSLRightInline{Martínez-Batlle, J. R., \& Laurencio-Girón, G. (2015).
+La fotointerpretación digital y la estadística inferencial como
+herramientas de determinación preliminar de tipos litológicos: estudio a
+partir de la densidad de drenaje y la relación de bifurcación en la
+ciudad de Ocoa y su entorno. In \emph{XI Congreso Internacional de
+Investigación Científica. Ministerio de Educación Superior, Ciencia y
+Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108049302}{}%
+\CSLLeftMargin{52. }
+\CSLRightInline{Martínez-Batlle, D., José Ramón Herrera-Hernández, \&
+Laurencio-Girón, G. (2015). Terrazas fluviales, cauces trenzados,
+vertientes y piedemontes: avances en la delimitación detallada de
+elementos morfológicos de la ciudad de Ocoa y su entorno mediante
+fotointerpretación digital. In \emph{XI Congreso Internacional de
+Investigación Científica. Ministerio de Educación Superior, Ciencia y
+Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108053251}{}%
+\CSLLeftMargin{53. }
+\CSLRightInline{Martínez-Batlle, J. R. (2015). Depende la diferenciación
+de especies entre dos muestreos de la litología o el relieve? Análisis
+aplicado a 24 muestreos de bosques mesófilos de la cuenca del río Ocoa.
+In \emph{XI Congreso Internacional de Investigación Científica.
+Ministerio de Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108049360}{}%
+\CSLLeftMargin{54. }
+\CSLRightInline{Martínez-Batlle, J. R., Santos-Grullón, I.,
+Rojas-Valerio, W., Medina-Castillo, E., \& De-Aza-Concepción, M. (2015).
+Encontramos una captura fluvial identificando y midiendo {``callaos''}
+de río? Evidencia de una captura fluvial mediante análisis estadístico
+de gravas y bloques: caso de los arroyos Parra y Naranjal. In \emph{XI
+Congreso Internacional de Investigación Científica. Ministerio de
+Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108050134}{}%
+\CSLLeftMargin{55. }
+\CSLRightInline{Martínez-Batlle, J. R., Laurencio-Girón, G., \&
+Medina-Castillo, E. (2015). Está cambiando la hidráulica del río Ocoa?
+Evidencia geomorfológica mediante el análisis estadístico de barras
+aluviales de la ciudad de Ocoa y Los Pilones. In \emph{XI Congreso
+Internacional de Investigación Científica. Ministerio de Educación
+Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108053568}{}%
+\CSLLeftMargin{56. }
+\CSLRightInline{Martínez-Batlle, J. R., \& Laurencio-Girón, G. (2015).
+Pueden contribuir la fotointerpretación digital y la estadística
+inferencial en la detección temprana de un deslizamiento? El caso de la
+Vuelta de la Paloma, cuenca del río Ocoa. In \emph{XI Congreso
+Internacional de Investigación Científica. Ministerio de Educación
+Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108053371}{}%
+\CSLLeftMargin{57. }
+\CSLRightInline{Martínez-Batlle, J. R., Santos-Grullón, I.,
+Laurencio-Girón, G., \& De-Aza-Concepción, M. (2015). Qué nos dice la
+geoestadística sobre la estructura, la biodiversidad y los factores del
+bosque? Análisis aplicado a 24 muestreos de bosques mesófilos de la
+cuenca del río Ocoa. In \emph{XI Congreso Internacional de Investigación
+Científica. Ministerio de Educación Superior, Ciencia y Tecnología
+(MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108046657}{}%
+\CSLLeftMargin{58. }
+\CSLRightInline{Medina-Castillo, E., \& Martínez-Batlle, J. R. (2015).
+Qué tanto aumenta la información geomorfológica la fotogrametría
+digital? Geomorfología de la ciudad de Barahona mediante
+fotointerpretación digital: avances en la correcta clasificación y la
+precisión geométrica. In \emph{XI Congreso Internacional de
+Investigación Científica. Ministerio de Educación Superior, Ciencia y
+Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108050214}{}%
+\CSLLeftMargin{59. }
+\CSLRightInline{Martínez-Batlle, J. R. (2015). Se asocian las
+características y los factores de la vegetación con los modelos
+rango-abundancia de bosques de plantas leñosas, palmas y Cactaceae?
+Análisis aplicado a 24 muestreos de bosques mesófilos de la cuenca del
+río Ocoa. In \emph{XI Congreso Internacional de Investigación
+Científica. Ministerio de Educación Superior, Ciencia y Tecnología
+(MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108053606}{}%
+\CSLLeftMargin{60. }
+\CSLRightInline{Martínez-Batlle, J. R., \& Laurencio-Girón, G. (2015).
+El deslizamiento de la Vuelta de la Paloma, cuenca del río Ocoa,
+República Dominicana: aplicación de la fotointerpretación digital y
+técnicas estadísticas para su detección preliminar. In \emph{XV
+Encuentro de Geógrafos de América Latina}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108100939}{}%
+\CSLLeftMargin{61. }
+\CSLRightInline{Martínez-Batlle, J. R., \& Laurencio-Girón, G. (2014).
+Comparación de la relación de bifurcación y densidad de drenaje en
+cuencas vertientes del entorno de Ocoa (República Dominicana) mediante
+fotointerpretación digital: aplicaciones en estudios geomorfológicos y
+geológicos. In \emph{XIII Jornadas de Investigación Científica.
+Universidad Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108100916}{}%
+\CSLLeftMargin{62. }
+\CSLRightInline{Santos-Grullón, I., \& Martínez-Batlle, J. R. (2014).
+Análisis comparado de las redes de drenaje de la cuenca del río Ocoa
+(República Dominicana), generadas a partir del mapa topográfico nacional
+1:50,000 y el modelo digital de elevaciones ASTER (30 m), usando ArcGIS
+y GRASS GIS. In \emph{XIII Jornadas de Investigación Científica.
+Universidad Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108100865}{}%
+\CSLLeftMargin{63. }
+\CSLRightInline{Martínez-Batlle, J. R., Santos-Grullón, I.,
+Laurencio-Girón, G., \& Cámara-Artigas, R. (2014). Bosques en régimen
+tropical y con contraste estacional de la cuenca del río Ocoa (I).
+Resultados preliminares de la diversidad alpha aplicado a 24 muestreos
+de campo. In \emph{XIII Jornadas de Investigación Científica.
+Universidad Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108101000}{}%
+\CSLLeftMargin{64. }
+\CSLRightInline{Medina-Castillo, E., \& Martínez-Batlle, J. R. (2014).
+Geomorfología de la ciudad de Barahona (República Dominicana) mediante
+fotointerpretación digital: avances en la correcta clasificación y la
+precisión geométrica. In \emph{XIII Jornadas de Investigación
+Científica. Universidad Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108100990}{}%
+\CSLLeftMargin{65. }
+\CSLRightInline{Martínez-Batlle, J. R., Herrera-Hernández, D., \&
+Laurencio-Girón, G. (2014). Geomorfología del pueblo de Ocoa y su
+entorno: cartografía de detalle mediante reconocimiento de terreno y
+fotointerpretación digital. In \emph{XIII Jornadas de Investigación
+Científica. Universidad Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108101655}{}%
+\CSLLeftMargin{66. }
+\CSLRightInline{Santos-Grullón, I., \& Martínez-Batlle, J. R. (2014).
+Comparación de las redes de drenaje obtenidas del mapa topográfico
+nacional y un MDE-ASTER de resolución media, cuenca del río Ocoa,
+República Dominicana: análisis morfométrico, estadística descriptiva y
+geoestadística. In \emph{X Congreso Internacional de Investigación
+Científica. Ministerio de Educación Superior, Ciencia y Tecnología
+(MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108101322}{}%
+\CSLLeftMargin{67. }
+\CSLRightInline{Martínez-Batlle, J. R., \& Aranguren-Cotallo, A. (2014).
+El Servidor de Mapas del Instituto Geográfico Universitario (SIGU)
+adquirido mediante proyecto FONDOCyT. In \emph{X Congreso Internacional
+de Investigación Científica. Ministerio de Educación Superior, Ciencia y
+Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108101266}{}%
+\CSLLeftMargin{68. }
+\CSLRightInline{Martínez-Batlle, J. R., \& Herrera-Hernández, D. (2014).
+Homogeneización, análisis de tendencia y superficies continuas de
+precipitación y temperatura de la cuenca del río Ocoa, usando técnicas
+de estadística inferencial y geoestadística. In \emph{X Congreso
+Internacional de Investigación Científica. Ministerio de Educación
+Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108101335}{}%
+\CSLLeftMargin{69. }
+\CSLRightInline{Laurencio-Girón, G., \& Martínez-Batlle, J. R. (2014).
+Ortorrectificación de fotogramas aéreos de la cuenca del río Ocoa
+donados por el INDRHI. Aplicaciones en geomorfología y biogeografía. In
+\emph{X Congreso Internacional de Investigación Científica. Ministerio
+de Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108101339}{}%
+\CSLLeftMargin{70. }
+\CSLRightInline{Medina-Castillo, E., \& Martínez-Batlle, J. R. (2014).
+Ortorrectificación de fotogramas aéreos de la sierra de Bahoruco donados
+por el INDRHI. Aplicaciones en geomorfología y biogeografía. In \emph{X
+Congreso Internacional de Investigación Científica. Ministerio de
+Educación Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108102009}{}%
+\CSLLeftMargin{71. }
+\CSLRightInline{Cámara-Artigas, R., Martínez-Batlle, J. R., \&
+Herrera-Hernández, D. (2014). Análisis cuantitativo de la diversidad de
+fanerófitas y caméfitas en ocho transectos de la Hoya de Enriquillo,
+República Dominicana: rango-abundancia, análisis comparado y
+agrupamiento. In \emph{X Congreso Internacional de Investigación
+Científica. Ministerio de Educación Superior, Ciencia y Tecnología
+(MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108102026}{}%
+\CSLLeftMargin{72. }
+\CSLRightInline{Martínez-Batlle, J. R., Herrera-Hernández, D.,
+Cámara-Artigas, R., Santos-Grullón, I., Laurencio-Girón, G., \&
+Medina-Castillo, E. (2014). Estudio geobotánico comparado de las lomas
+la Cruz y de Cholo, cuenca del río Ocoa, República Dominicana: bosques
+meso-tropófilos en morfosistema poligenético de karst y flysch. In
+\emph{VIII Congreso de Biodiversidad Caribeña. Universidad Autónoma de
+Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108102032}{}%
+\CSLLeftMargin{73. }
+\CSLRightInline{Martínez-Batlle, J. R., Cámara-Artigas, R.,
+Santos-Grullón, I., Herrera-Hernández, D., Medina-Castillo, E., \&
+Laurencio-Girón, G. (2014). Estudio geobotánico de Monteada Nueva,
+Cortico y Cachote, sierra de Bahoruco, República Dominicana: superficies
+corrosivas, pedimentos y bosques nublados amenazados en karst de montaña
+tropical. In \emph{VIII Congreso de Biodiversidad Caribeña. Universidad
+Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_76606520}{}%
+\CSLLeftMargin{74. }
+\CSLRightInline{Quílez-Caballero, Á., Martínez-Batlle, J. R., \&
+Cámara-Artigas. (2014). Caracterización biogeográfica y distribución de
+los bosques nublados de montaña en Bahoruco Oriental, República
+Dominicana. In \emph{VIII Congreso Español de Biogeografía. Biogeografía
+de Sistemas Litorales. Dinámica y Conservación. Vicerrectorado de
+Investigación de la Universidad de Sevilla. Grupo de Geografía Física de
+la Asociación Española de Geografía (AGE)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_76609683}{}%
+\CSLLeftMargin{75. }
+\CSLRightInline{Martínez-Batlle, J. R., Cámara-Artigas, R.,
+Santos-Grullón, I., Laurencio-Girón, G., Herrera-Hernández, D.,
+Medina-Castillo, E., \& Laurencio-Girón, G. (2014). Geomorfología y
+geobotánica de Monteada Nueva, Cortico y Cachote, sierra de Bahoruco,
+República Dominicana: superficies corrosivas, pedimentos y bosques
+nublados amenazados en karst de montaña media tropical. \emph{Anuario de
+Investigaciones Científicas. Universidad Autónoma de Santo Domingo
+(UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108102314}{}%
+\CSLLeftMargin{76. }
+\CSLRightInline{Gómez-Ponce, C., Cámara-Artigas, R., Martínez-Batlle, J.
+R., \& Díaz-del-Olmo, F. (2014). Metodología para el estudio de sistemas
+de arrecifes de coral con imágenes de satélite LandSat: sistema
+arrecifal de Cabedelo-Cabo Branco (Joao Pessoa, estado de Pernambuco,
+Brasil). In \emph{VIII Congreso Español de Biogeografía. Biogeografía de
+Sistemas Litorales. Dinámica y Conservación. Vicerrectorado de
+Investigación de la Universidad de Sevilla. Grupo de Geografía Física de
+la Asociación Española de Geografía (AGE)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108102047}{}%
+\CSLLeftMargin{77. }
+\CSLRightInline{Martínez-Batlle, J. R., Cámara-Artigas, R.,
+Santos-Grullón, I., Herrera-Hernández, D., Medina-Castillo, E., \&
+Laurencio-Girón, G. (2013). Geomorfología y geobotánica de Monteada
+Nueva, Cortico y Cachote, sierra de Bahoruco, República Dominicana:
+superficies corrosivas, pedimentos y bosques nublados amenazados en
+karst de montaña media tropical. In \emph{XIII Jornadas de Investigación
+Científica. Universidad Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108102200}{}%
+\CSLLeftMargin{78. }
+\CSLRightInline{Martínez-Batlle, J. R., \& Cámara-Artigas, R. (2012).
+Estudio comparativo de las formaciones vegetales de montaña media
+tropical sobre relieves calizos karstificados. Sierra de Bahoruco
+(República Dominicana)-Sierra Madre Oriental (Tamaulipas, México). In
+\emph{VII Congreso español de Biogeografía, Pirineo 2012. Las zonas de
+montaña: gestión y biodiversidad. Grup de Recerca en Àrees de Muntanya i
+Paisatge, Departament de Geografía, Universitat Autònoma de Barcelona.
+Fundació Catalunya Caixa. MónNatura Pirineus}.}
+
+\leavevmode\hypertarget{ref-batlle2012sierra}{}%
+\CSLLeftMargin{79. }
+\CSLRightInline{Martínez-Batlle, J. R. (2012). \emph{Sierra de Bahoruco
+Occidental, República Dominicana: estudio biogeomorfológico y estado de
+conservación de su parque nacional} {[}Tesis doctoral{]}. Universidad de
+Sevilla.}
+
+\leavevmode\hypertarget{ref-ponce2010metodologia}{}%
+\CSLLeftMargin{80. }
+\CSLRightInline{Gómez-Ponce, C., Martínez-Batlle, J. R., \&
+Cámara-Artigas, R. (2010). Metodología para la realización de
+batimetrías con imágenes de satélite Landsat: Ejemplos de sistemas
+arrecifales coralinos al este de República Dominicana. \emph{Mapping},
+\emph{142}, 46--50.}
+
+\leavevmode\hypertarget{ref-del2009diagnostico}{}%
+\CSLLeftMargin{81. }
+\CSLRightInline{Díaz-del-Olmo, F., Cámara-Artigas, R., \&
+Martínez-Batlle, J. R. (2009). Diagnóstico y ordenación del Manglar de
+la Provincia de Chiriquí (Panamá). \emph{Geografía: Ciencia de La Tierra
+Para La Sostenibilidad}, 55--78.}
+
+\leavevmode\hypertarget{ref-diaz2009evenement}{}%
+\CSLLeftMargin{82. }
+\CSLRightInline{Díaz-del-Olmo, F., Martínez-Batlle, J. R.,
+Cámara-Artigas, R., \& Salomon, J.-N. (2009). L'évènement climatique
+extrême tropical (ECET) du 21 novembre 2006: analyse
+hydro-géomorphologique et gestion intégrée des bassins versants
+hydrographiques tropicaux. \emph{Les Cahiers d'Outre-Mer}, \emph{2},
+219--240.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_107991988}{}%
+\CSLLeftMargin{83. }
+\CSLRightInline{Martínez-Batlle, J. R., Díaz-del-Olmo, F.,
+Cámara-Artigas, R., González, L., \& Ramos, M. del C. (2008).
+Directrices de ordenación para la gestión integrada de las cuencas de
+los ríos Indio y Miguel de la Borda. In \emph{Fondo Mixto
+Hispano-Panameño de Cooperación, Autoridad Nacional del Ambiente
+(ANAM)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_107991418}{}%
+\CSLLeftMargin{84. }
+\CSLRightInline{Cámara-Artigas, R., Bejarano-Palma, R., Martínez-Batlle,
+J. R., \& Díaz-del-Olmo, F. (2006). Estructura y geobotánica de la
+vegetación de bosques tropófilos y helófilos tropicales en antiguos
+humedales colmatados: laguna de Limón y En medio (Hoya de Enriquillo,
+República Dominicana). In \emph{IV Congreso Español de Biogeografía.
+Avances en biogeografía. Ávila}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108102758}{}%
+\CSLLeftMargin{85. }
+\CSLRightInline{Martínez-Batlle, J. R. (2005). Formaciones vegetales
+relictas: pinares y bosques nublados entre 1.000 y 2.400 m. en la sierra
+de Bahoruco (suroeste de República Dominicana). In \emph{I Congreso
+Internacional de Investigación Científica. Ministerio de Educación
+Superior, Ciencia y Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108102743}{}%
+\CSLLeftMargin{86. }
+\CSLRightInline{Martínez-Batlle, J. R. (2005). Jimaní: claves
+geomorfológicas de la riada. In \emph{I Congreso Internacional de
+Investigación Científica. Ministerio de Educación Superior, Ciencia y
+Tecnología (MESCyT)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108102772}{}%
+\CSLLeftMargin{87. }
+\CSLRightInline{Martínez-Batlle, J. R. (2005). Cambios decenales
+(1973-99) de formaciones vegetales tropicales en la provincia Pedernales
+(República Dominicana). aplicación de técnicas cartográficas y sensores
+remotos (Landsat MSS, ETM+). In \emph{V Congreso de Biodiversidad
+Caribeña. Universidad Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108102787}{}%
+\CSLLeftMargin{88. }
+\CSLRightInline{Martínez-Batlle, J. R. (2005). Evolución histórica de
+los manglares del humedal de las bahías de Monte Cristi y Manzanillo
+(parque nacional de Montecristi, República Dominicana). In \emph{V
+Congreso de Biodiversidad Caribeña. Universidad Autónoma de Santo
+Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108102793}{}%
+\CSLLeftMargin{89. }
+\CSLRightInline{Martínez-Batlle, J. R. (2005). Nuevas tendencias en la
+ordenación de recursos naturales y áreas protegidas en el caribe
+(Panamá, Costa Rica y República Dominicana). In \emph{V Congreso de
+Biodiversidad Caribeña. Universidad Autónoma de Santo Domingo (UASD)}.}
+
+\leavevmode\hypertarget{ref-artigas2005desarrollo}{}%
+\CSLLeftMargin{90. }
+\CSLRightInline{Cámara-Artigas, R., Martínez-Batlle, J. R., \&
+Díaz-del-Olmo, F. (2005). \emph{Desarrollo sostenible y medio ambiente
+en República Dominicana: medios naturales, manejo histórico,
+conservación y protección}. Consejo Superior de Investigaciones
+Cientı́ficas, Escuela de Estudios Hispano-Americanos, Universidad de
+Sevilla. \url{https://books.google.com.do/books?id=tfe4CCivLzYC}}
+
+\leavevmode\hypertarget{ref-2005Mdcr}{}%
+\CSLLeftMargin{91. }
+\CSLRightInline{Díaz-del-Olmo, F., Cámara-Artigas, R., Martínez-Batlle,
+J. R., \& Gómez-Ponce, C. (2005). \emph{Mapa de comunidades, recursos
+turísticos y servicios del Golfo de Kuna Yala {[}Material
+cartográfico{]}}. Fondo mixto hispano-panameño de cooperación.}
+
+\leavevmode\hypertarget{ref-2005Mdod}{}%
+\CSLLeftMargin{92. }
+\CSLRightInline{Díaz-del-Olmo, F., Cámara-Artigas, R., Martínez-Batlle,
+J. R., \& Gómez-Ponce, C. (2005). \emph{Mapa de ordenación de los
+recursos naturales del Golfo de Kuna Yala {[}Material cartográfico{]} =
+Environmental management mapping, Kuna Yala Gulf (Panama)}. Fondo mixto
+hispano-panameño de cooperación.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108102924}{}%
+\CSLLeftMargin{93. }
+\CSLRightInline{Cámara-Artigas, R., Martínez-Batlle, J. R., \&
+Díaz-del-Olmo, F. (2004). Comportamiento dinámico estacional del humedal
+tropical de la laguna de Cabral (Hoya de Enriquillo, República
+Dominicana): sector San Cristóbal. In \emph{III Congreso Español de
+Biogeografía. Comunicaciones. Isla de Txatxarramendi (Sukarrieta),
+Reserva de la Biosfera de Urdaibai. Universidad del País Vasco.}}
+
+\leavevmode\hypertarget{ref-batlle2004arrecifes}{}%
+\CSLLeftMargin{94. }
+\CSLRightInline{Gómez-Ponce, C., Martínez-Batlle, J. R., Cámara-Artigas,
+R., \& Díaz-del-Olmo, F. (2004). Arrecifes frangeantes de Paso de
+Catuano (Parque Nacional del Este, República Dominicana).
+\emph{Fronteras En Movimiento}, 307--316.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108001058}{}%
+\CSLLeftMargin{95. }
+\CSLRightInline{Díaz-del-Olmo, F., Cámara-Artigas, R., Martínez-Batlle,
+J. R., \& Morón-Monge, M. del C. (2004). \emph{Directrices de gestioń
+para la conservacioń y desarrollo integral de un humedal centroamericano
+: Golfo de Montijo (litoral del Pacif́ico, Panama)́}. Agencia Española De
+Cooperación Internacional.}
+
+\leavevmode\hypertarget{ref-2004Dyrp}{}%
+\CSLLeftMargin{96. }
+\CSLRightInline{Díaz-del-Olmo, F., Cámara-Artigas, R., Martínez-Batlle,
+J. R., \& Morón-Monge, M. del C. (2004). \emph{Directrices y
+recomendaciones para el uso y gestión sostenible de los manglares de
+Chiriquí (República de Panamá)}. Ministerio de Economía y Finanzas de
+Panamá, Autoridad Nacional del Ambiente de Panamá, Embajada de España en
+Panamá, Cooperación española.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108002351}{}%
+\CSLLeftMargin{97. }
+\CSLRightInline{Díaz-del-Olmo, F., Cámara-Artigas, R., \&
+Martínez-Batlle, J. R. (2004). \emph{Plan de Ordenación de los Recursos
+Naturales de la Provincia Pedernales}. Oficina Nacional de Planificación
+(ONAPLAN) del Secretariado Técnico de la Presidencia de República
+Dominicana; Agencia Española de Cooperación Internacional.}
+
+\leavevmode\hypertarget{ref-martinez2003arrecifes}{}%
+\CSLLeftMargin{98. }
+\CSLRightInline{Martínez-Batlle, J. R., Gómez-Ponce, C., Cámara-Artigas,
+R., \& Díaz-del-Olmo, F. (2003). Arrecifes costeros sumergidos en paso
+de Catuano (Parque Nacional del Este, República Dominicana):
+caracterización biosedimentaria y aplicación a la ordenación de unidades
+ambientales. \emph{XI Reunión Nacional de Cuaternario}, 27--32.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108103180}{}%
+\CSLLeftMargin{99. }
+\CSLRightInline{Martínez-Batlle, J. R. (2003). Dinámica aluvial y
+riesgos naturales por inundaciones en regiones tropicales: conos de
+desbordamiento de Vicente Noble y Tamayo, República Dominicana. In
+\emph{XI Reunión Nacional de Cuaternario (XI-RENAQ). Asociación Española
+de Cuaternario (AEQUA)}.}
+
+\leavevmode\hypertarget{ref-Jose_Ramon_Martinez-Batlle_108103244}{}%
+\CSLLeftMargin{100. }
+\CSLRightInline{Martínez-Batlle, J. R., Cámara-Artigas, R.,
+Díaz-del-Olmo, F., \& Gómez-Ponce, C. (2002). Arrecifes frangeantes de
+Paso de Catuano (Parque Nacional del Este, República Dominicana). In
+\emph{Fronteras en movimiento. IX Coloquio Ibérico de Geografía.
+Huelva}.}
+
+\leavevmode\hypertarget{ref-del2002hatos}{}%
+\CSLLeftMargin{101. }
+\CSLRightInline{Díaz-del-Olmo, F., Cámara-Artigas, R., \&
+Martínez-Batlle, J. R. (2002). Hatos caribeños y dehesas andaluzas.
+Paisaje y estructura parcelaria. In \emph{Cuba y Andalucı́a entre las dos
+orillas} (Vol. 422, p. 303). Editorial CSIC-CSIC Press.}
+
+\leavevmode\hypertarget{ref-martinez2002sabanas}{}%
+\CSLLeftMargin{102. }
+\CSLRightInline{Martínez-Batlle, J. R. (2002). Sabanas de la República
+Dominicana: análisis ecodinámico de patrones tipológicos y sus ecotonos
+{[}Mathesis{]}. In \emph{Proyecto de investigación de Doctorado Cambios
+ambientales y riesgos naturales. Departamento de geografía física y
+análisis geográfico regional, Universidad de Sevilla}. Departamento de
+Geografía Física y Análisis Regional, Universidad de Sevilla.}
+
+\end{document}

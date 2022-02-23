@@ -1,0 +1,86 @@
+---
+name: José Ramón
+surname: Martínez Batlle
+position: "Professor & Researcher"
+address: "School of Geography, Autonomous University of Santo Domingo"
+phone: +1809 535 8273 ext 4281
+www: geografiafisica.org
+email: "joseramon@geografiafisica.org"
+twitter: geografiard
+github: geofis
+date: "`r format(Sys.time(), '%B %Y')`"
+output:
+  vitae::hyndman:
+    keep_tex: true
+    # latex_engine: xelatex
+editor_options: 
+  chunk_output_type: console
+header-includes:
+  \DeclareUnicodeCharacter{0301}{\'{e}}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(dplyr)
+library(stringr)
+library(tibble)
+library(rorcid)
+```
+
+# Biography
+
+```{r, results='asis'}
+lang <- 'ESP'
+# lang <- 'ENG'
+cat(
+  str_replace_all(
+    str_extract(
+      orcid_bio(
+        orcid = '0000-0001-9924-0327')$`0000-0001-9924-0327`$content,
+      paste0('<', lang, '(.|\n)*', lang, '>')
+      ), '<.*?>', ''
+    )
+  )
+```
+
+# Employments
+
+```{r}
+emp <- orcid_employments("0000-0001-9924-0327")
+bind_rows(emp$`0000-0001-9924-0327`$`affiliation-group`$summaries) %>%
+  rename_all(~str_replace_all(., "employment-summary\\.", "")) %>% 
+  mutate(`end-date.year.value` = ifelse(is.na(`end-date.year.value`), 'Present', `end-date.year.value`)) %>% 
+  detailed_entries(
+    what = `role-title`,
+    when = glue::glue("{`start-date.year.value`} - {`end-date.year.value`}"),
+    with = organization.name,
+    where = organization.address.city
+  )
+```
+
+# Education
+
+```{r}
+edu <- orcid_educations("0000-0001-9924-0327")
+bind_rows(edu$`0000-0001-9924-0327`$`affiliation-group`$summaries) %>%
+  rename_all(~str_replace_all(., "education-summary\\.", "")) %>% 
+  detailed_entries(
+    what = `role-title`,
+    when = glue::glue("{`start-date.year.value`} - {`end-date.year.value`}"),
+    with = organization.name,
+    where = organization.address.city
+  )
+```
+
+# Works
+
+```{r, eval=T}
+# Corregir en ORCID problemas en los BibTeX. En general, y aunque no sea la solución ideal,
+# para conservar los apellidos integramente, hay que preferir: "Apellido1-Apellido2, Nombre1 Nombre2"
+# Descargar los trabajos (works) desde ORCID como bibtex (en Actions > Export all works)
+system('sed -i "s/Jos{\\\\\\\'e}_Ram{\\\\\\\'o}n_Mart{\\\\\\\'i}nez-Batlle_/Jose_Ramon_Martinez-Batlle_/g" works.bib')
+bibliography_entries("works.bib")
+```
+
+<!-- Una vez tejido el documento, si da error, usar el .tex para compilar en Texmaker -->
